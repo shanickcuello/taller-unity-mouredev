@@ -11,8 +11,6 @@ Este Readme es parte de una charla virtual a modo taller introductorio de Unity 
 
 ![Taller Unity _ MoureDev](https://github.com/user-attachments/assets/6a52e1cd-1dcd-4db6-af5a-60358541361a)
 
-![Taller Unity _ MoureDev (1)](https://github.com/user-attachments/assets/2fd1bda8-0755-4a99-b36c-eb46d1906cd9)
-
 ![Taller Unity _ MoureDev (2)](https://github.com/user-attachments/assets/45483c1b-ca1f-4321-b198-4e064eb7c1c9)
 
 ![Taller Unity _ MoureDev (3)](https://github.com/user-attachments/assets/398240ce-53af-4f44-ac4f-eb76ad9bf126)
