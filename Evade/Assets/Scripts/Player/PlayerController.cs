@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Player
@@ -6,6 +7,14 @@ namespace Player
     {
         [SerializeField] private float movementSpeed;
         [SerializeField] private float rotationSpeed;
+        [SerializeField] private PlayerSphere rightSphere, leftSphere;
+        public Action PlayerCollidedWithObstacle;
+
+        private void Awake()
+        {
+            rightSphere.Collided += OnSphereCollided;
+            leftSphere.Collided += OnSphereCollided;
+        }
 
         private void Update()
         {
@@ -22,6 +31,17 @@ namespace Player
         {
             var horizontal = Input.GetAxis("Horizontal");
             transform.Rotate(transform.forward, horizontal * Time.deltaTime * rotationSpeed);
+        }
+
+        private void OnSphereCollided()
+        {
+            PlayerCollidedWithObstacle?.Invoke();
+        }
+
+        private void OnDestroy()
+        {
+            rightSphere.Collided -= OnSphereCollided;
+            leftSphere.Collided -= OnSphereCollided;
         }
     }
 }
