@@ -30,7 +30,7 @@ namespace Player
         private void UpdateRotation()
         {
             var horizontal = Input.GetAxis("Horizontal");
-            transform.Rotate(transform.forward, horizontal * Time.deltaTime * rotationSpeed);
+            transform.Rotate(transform.forward, horizontal * Time.deltaTime * -rotationSpeed);
         }
 
         private void OnSphereCollided()
