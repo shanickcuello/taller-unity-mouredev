@@ -1,24 +1,27 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+namespace Player
 {
-    [SerializeField] private float movementSpeed;
-    [SerializeField] private float rotationSpeed;
-
-    private void Update()
+    public class PlayerController : MonoBehaviour
     {
-        UpdateRotation();
-        MoveForward();
-    }
+        [SerializeField] private float movementSpeed;
+        [SerializeField] private float rotationSpeed;
 
-    private void MoveForward()
-    {
-        transform.position += transform.forward * (Time.deltaTime * movementSpeed);
-    }
+        private void Update()
+        {
+            UpdateRotation();
+            MoveForward();
+        }
 
-    private void UpdateRotation()
-    {
-        var horizontal = Input.GetAxis("Horizontal");
-        transform.Rotate(transform.forward, horizontal * Time.deltaTime * rotationSpeed);
+        private void MoveForward()
+        {
+            transform.position += transform.forward * (Time.deltaTime * movementSpeed);
+        }
+
+        private void UpdateRotation()
+        {
+            var horizontal = Input.GetAxis("Horizontal");
+            transform.Rotate(transform.forward, horizontal * Time.deltaTime * rotationSpeed);
+        }
     }
 }
