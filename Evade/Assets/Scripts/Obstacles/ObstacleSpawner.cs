@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Obstacles
@@ -5,7 +6,7 @@ namespace Obstacles
     public class ObstacleSpawner : MonoBehaviour
     {
         [SerializeField] private Transform player;
-        [SerializeField] private GameObject obstaclePrefab;
+        [SerializeField] private List<GameObject> obstaclesPrefabs;
         [SerializeField] private float spawnInterval = 3f;
         [SerializeField] private float spawnDistanceFromPlayer = 20;
 
@@ -21,8 +22,10 @@ namespace Obstacles
             var offsetY = Mathf.Sin(angle) * 2f;
 
             var spawnPosition = player.position + new Vector3(offsetX, offsetY, spawnDistanceFromPlayer);
-
-            Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity);
+            
+            int spawnIndex = Random.Range(0, obstaclesPrefabs.Count);
+            
+            Instantiate(obstaclesPrefabs[spawnIndex], spawnPosition, Quaternion.identity);
             _spawnTimer = 0f;
         }
     }
