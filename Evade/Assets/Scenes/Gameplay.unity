@@ -587,7 +587,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 880791185}
   obstaclePrefab: {fileID: 5670218217521540465, guid: f710e32c90ba14501a8e6653446be704, type: 3}
-  spawnInterval: 3
+  spawnInterval: 2
+  spawnDistanceFromPlayer: 20
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
